@@ -1,9 +1,57 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: sans-serif;
+  background-color: #cce7c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Center container */
+.app {
+  text-align: center;
+}
+
+/* Game grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Hole styling */
 .hole {
+  width: 100px;
+  height: 100px;
   background: url("/hole.png") no-repeat center/contain;
+  display: inline-block;
+  margin: 0.5rem;
+  position: relative;
+}
+/* Mole styling */
+.hole.mole::after {
+  content: "";
+  background: url("/mole.png") no-repeat center/contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.mole {
-  background-image: url("/mole.png");
+/* Button styles */
+button {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
-
